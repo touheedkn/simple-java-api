@@ -16,10 +16,10 @@ public class UserService {
     public UserService(){
         userList = new ArrayList<>();
 
-        User user1 = new User(1, "John", 28, "john@gmail.com");
-        User user2 = new User(2, "Jane", 26, "jane@gmail.com");
-        User user3 = new User(3, "Zane", 46, "jane@gmail.com");
-        User user4 = new User(4, "Zoe", 16, "jane@gmail.com");
+        User user1 = new User("John", 28, "john@gmail.com");
+        User user2 = new User("Jane", 26, "jane@gmail.com");
+        User user3 = new User("Zane", 46, "jane@gmail.com");
+        User user4 = new User("Zoe", 16, "jane@gmail.com");
 
         userList.addAll(Arrays.asList(user1, user2, user3, user4));
     }
@@ -32,5 +32,14 @@ public class UserService {
             }
         }
         return Optional.ofNullable(optional.orElse(null));
+    }
+
+    public User[] getUsers() {
+        return userList.toArray(new User[userList.size()]);
+    }
+
+    public void addUser(String name, int age, String email) {
+        User user = new User(name, age, email);
+        userList.add(user);
     }
 }

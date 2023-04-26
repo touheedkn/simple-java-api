@@ -1,13 +1,14 @@
 package com.example.SprintAPI.api.model;
 
 public class User {
+    private static int nextId = 1;
     private int id;
     private String name;
     private int age;
     private String email;
 
-    public User(int id, String name, int age, String email) {
-        this.id = id;
+    public User(String name, int age, String email) {
+        this.id = nextId++;
         this.name = name;
         this.age = age;
         this.email = email;
@@ -19,6 +20,14 @@ public class User {
 
     public int setId(int id){
         return this.id = id;
+    }
+
+    public static int getNextId() {
+        return nextId;
+    }
+
+    public static void setNextId(int nextId) {
+        User.nextId = nextId;
     }
 
     public String getName(){
