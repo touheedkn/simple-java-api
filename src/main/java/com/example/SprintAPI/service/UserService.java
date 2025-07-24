@@ -16,7 +16,7 @@ public class UserService {
     public UserService(){
         userList = new ArrayList<>();
 
-        User user1 = new User("John", 28, "john@gmail.com");
+        User user1 = new User("mona", 28, "john@gmail.com");
         User user2 = new User("Jane", 26, "jane@gmail.com");
         User user3 = new User("Zane", 46, "jane@gmail.com");
         User user4 = new User("Zoe", 16, "jane@gmail.com");
